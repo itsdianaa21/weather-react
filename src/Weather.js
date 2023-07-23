@@ -14,6 +14,10 @@ export default function Weather(props) {
     humidity: 80,
     wind: 5,
   };
+  let apiKey = "3f6be1c407b0d9d1933561808db358ba";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(handleResponse);
 
   function handleResponse(response) {
     alert(
@@ -69,5 +73,4 @@ export default function Weather(props) {
       </div>
     </div>
   );
-    
 }
